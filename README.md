@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# 🟦 Fullstack Social Media App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fullstack social media application with a **React frontend** and a **Node.js + Express backend**, fully containerized with Docker.
+Users can create profiles, post content, like and comment on posts, and switch to dark mode. Images are uploaded using **Cloudinary**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🛠️ Technology Stack
 
-### `npm start`
+* **Frontend:** React, JavaScript, Sass, served via **Nginx**
+* **Backend:** Node.js + Express in TypeScript, **Prisma** ORM, **JWT** authentication
+* **Database:** PostgreSQL
+* **File Uploads:** Cloudinary
+* **Containerization:** Docker & Docker Compose
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚡ Features
 
-### `npm test`
+* User registration and authentication
+* Profile creation and editing
+* Create, edit, and delete posts
+* Like and comment system
+* Dark mode theme
+* Image uploads with Cloudinary
+* Fully containerized setup with Docker
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Requirements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [Docker](https://www.docker.com/) & [Docker Compose](https://docs.docker.com/compose/) installed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Setup
 
-### `npm run eject`
+1. Clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/yourusername/squad-social-media.git
+cd squad-social-media
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Create a `.env` file with your environment variables (example):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```env
+DATABASE_URL=postgresql://postgres:postgres@db:5432/squad
+JWT_SECRET=supersecretkey
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Run Docker Compose:
 
-## Learn More
+```bash
+docker compose up --build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Frontend will be available at [http://localhost:3000](http://localhost:3000)
+* Backend will run on [http://localhost:4000](http://localhost:4000)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🗂️ Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+squad-social-media/
+├─ front/       # React frontend
+├─ api/         # Express backend with TypeScript & Prisma
+├─ docker-compose.yml
+└─ .env
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## ✅ Notes
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Frontend served via **Nginx** for production-ready static hosting
+* Backend is fully **RESTful** and communicates with frontend through Docker network
+* Images uploaded via **Cloudinary**
+* Database runs in a separate **PostgreSQL Docker container**
